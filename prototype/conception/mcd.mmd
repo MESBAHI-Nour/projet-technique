@@ -1,0 +1,36 @@
+---
+config:
+  theme: neutral
+---
+erDiagram
+    direction TB
+
+    REALISATEUR {
+        int id_realisateur PK
+        string nom_realisateur
+        string prenom_realisateur
+        date date_naissance
+        string nationalite
+        text biographie
+        string photo_realisateur_url
+    }
+
+    FILM {
+        int id_film PK
+        string titre_film
+        string description_film
+        datetime date_sortie
+        int duree
+        int classification_age
+        string poster_film_url
+        string video_stream_url
+    }
+
+    GENRE {
+        int id_genre PK
+        string description_genre
+        string nom_genre
+    }
+
+    REALISATEUR o{--|| FILM : "réaliser"
+    GENRE |{--|| FILM : "associer"
