@@ -1,0 +1,11 @@
+usecase-beta
+direction LR
+actor Admin("Admin")
+actor Auteur("realisateur")
+actor visiteur("visiteur")
+
+  system [ "streaming_film"]
+
+Admin -- Gère le contenu -- system
+Auteur --Rédige et gère ses films -- system
+visiteur -- Consulte les films publiés -- system

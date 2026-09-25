@@ -27,6 +27,7 @@ CREATE TABLE film (
     classification_age INT,
     poster_film_url VARCHAR(255) NOT NULL,
     video_stream_url VARCHAR(255) NOT NULL,
+    status_film INT DEFAULT 0,
     id_realisateur INT NOT NULL,
     id_genre INT NOT NULL,
     FOREIGN KEY (id_realisateur) REFERENCES realisateur(id_realisateur),

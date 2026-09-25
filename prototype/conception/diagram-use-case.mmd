@@ -1,0 +1,22 @@
+usecase-beta
+direction LR
+actor Administrateur
+actor Realisateur
+actor Visiteur
+
+Administrateur --> "consulter les genres"
+Administrateur --> "ajouter une genre"
+Administrateur --> "modifier une genre"
+Administrateur --> "supprimer une genre"
+Administrateur --> "créer un realisateur"
+Administrateur --> "valider un film"
+Administrateur --> "publier un film"
+Administrateur --> "supprimer un film publie"
+
+Realisateur --> "ajouter un film"
+Realisateur --> "modifier un film non publié"
+Realisateur --> "supprimer un film non publié"
+Realisateur --> "changer son profil"
+Realisateur --> "réinitialiser son mot de passe"
+
+Visiteur --> "consulter les films"
