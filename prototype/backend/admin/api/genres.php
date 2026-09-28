@@ -28,7 +28,7 @@ if ($method === "POST") {
 
     $genre->setNom($data["nom"]);
     
-    $genre->getDescription($data["description"]);
+    $genre->setDescription($data["description"]);
 
     $req = $connexion->prepare("INSERT INTO genre (nom_genre ,description_genre) VALUES (?,?)");
 
