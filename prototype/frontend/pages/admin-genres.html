@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Gestion des Genres cinématographiques</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100">
+
+<div class="flex min-h-screen">
+
+
+    <aside class="w-64 bg-gray-800 text-white p-6">
+
+        <h1 class="text-2xl font-bold mb-8">
+            dashboard
+        </h1>
+
+        <nav class="space-y-2">
+
+            <a href="#" class="block p-3 text-gray-300 hover:bg-gray-700 rounded">
+                Tableau de bord
+            </a>
+
+            <a href="#" class="block p-3 text-gray-300 hover:bg-gray-700 rounded">
+                Films
+            </a>
+
+            <a href="#" class="block p-3 bg-gray-700 rounded">
+                Genres
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="flex-1 p-8">
+
+        <div class="flex justify-between items-center mb-8">
+
+            <div>
+
+                <p class="text-gray-500">
+                    Admin / Genres
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-800">
+                    Gestion des Genres
+                </h2>
+            </div>
+
+            <a
+                id="btn-nouvelle"
+                href="./admin-genres-form.html"
+                class="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
+
+                + Nouvelle genre
+
+            </a>
+
+        </div>
+
+
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+
+            <table class="w-full">
+
+                <thead class="bg-gray-800 text-white">
+
+                    <tr>
+
+                        <th class="p-4 text-left">
+                            ID
+                        </th>
+
+                        <th class="p-4 text-left">
+                            Nom de genre
+                        </th>
+
+                        <th class="p-4 text-left">
+                            description de genre
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody
+                    id="table-genre"
+                    class="divide-y">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../js/genres.js"></script>
+</body>
+</html>

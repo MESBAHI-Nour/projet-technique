@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ajouter une categorie</title>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex min-h-screen">
+
+        <aside class="w-64 bg-gray-800 text-white p-6">
+
+            <h1 class="text-2xl font-bold mb-8">
+                Dashboard
+            </h1>
+
+            <nav class="space-y-2">
+
+                <a href="#"
+                   class="block p-3 text-gray-300 hover:bg-gray-700 rounded">
+                    Tableau de bord
+                </a>
+
+                <a href="#"
+                   class="block p-3 text-gray-300 hover:bg-gray-700 rounded">
+                    Films
+                </a>
+
+                <a href="#"
+                   class="block p-3 bg-gray-700 rounded">
+                    Genres
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <main class="flex-1 p-6">
+
+            <div class="flex justify-end mb-6">
+
+                <a href="./admin-genres.html"
+                class="inline-flex items-center gap-3 bg-white text-gray-800
+                        border border-gray-200 px-6 py-4 rounded-xl
+                        shadow-sm hover:bg-gray-50">
+
+                    <span class="text-2xl">←</span>
+
+                    <span class="font-semibold text-lg">
+                        Retour à la liste
+                    </span>
+
+                </a>
+
+            </div>
+
+            <div class="flex justify-center">
+
+                <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+
+                    <h3 class="text-xl font-bold mb-6 text-center">
+                        Ajouter Genre cinématographique
+                    </h3>
+
+                    <form id="form-genre">
+
+                        <label for="nom" class="block mb-2 font-medium">
+                            Nom de genre
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nom"
+                            placeholder="Nom du genre"
+                            class="w-full border border-gray-300 rounded-lg p-3 mb-4
+                                focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+
+                        <label for="description" class="block mb-2 font-medium">
+                            Description de genre
+                        </label>
+
+                        <textarea
+                            id="description"
+                            placeholder="Description du genre"
+                            class="w-full border border-gray-300 rounded-lg p-3 mb-4
+                                focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required></textarea>
+
+                        <div class="flex gap-3">
+
+                            <button
+                                type="submit"
+                                class="flex-1 bg-blue-600 text-white px-5 py-2
+                                    rounded-lg hover:bg-blue-700">
+                                Enregistrer
+                            </button>
+
+                            <button
+                                type="button"
+                                id="btn-annuler"
+                                class="flex-1 bg-gray-400 text-white px-5 py-2
+                                    rounded-lg hover:bg-gray-500">
+                                Annuler
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
