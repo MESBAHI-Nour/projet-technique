@@ -2,98 +2,117 @@
 <html lang="fr">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <title>Gestion des Genres cinématographiques</title>
-
+    <title>Gestion des Genres</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 
-<body class="bg-gray-100">
+<body>
 
 <div class="flex min-h-screen">
-
 
     <aside class="w-64 bg-gray-800 text-white p-6">
 
         <h1 class="text-2xl font-bold mb-8">
-            dashboard
+            Dashboard
         </h1>
 
-        <nav class="space-y-2">
-
-            <a href="#" class="block p-3 text-gray-300 hover:bg-gray-700 rounded">
+        <nav>
+            <a href="#" class="block p-3">
                 Tableau de bord
             </a>
 
-            <a href="#" class="block p-3 text-gray-300 hover:bg-gray-700 rounded">
+            <a href="#" class="block p-3">
                 Films
             </a>
 
-            <a href="#" class="block p-3 bg-gray-700 rounded">
+            <a href="#" class="block p-3 bg-gray-700">
                 Genres
             </a>
-
         </nav>
 
     </aside>
 
     <main class="flex-1 p-8">
 
-        <div class="flex justify-between items-center mb-8">
+        <div class="flex justify-between mb-8">
 
             <div>
-
-                <p class="text-gray-500">
-                    Admin / Genres
-                </p>
-
-                <h2 class="text-3xl font-bold text-gray-800">
+                <h2 class="text-3xl font-bold">
                     Gestion des Genres
                 </h2>
             </div>
 
-            <a
+            <button
                 id="btn-nouvelle"
-                href="./admin-genres-form.html"
-                class="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
-
-                + Nouvelle genre
-
-            </a>
+                class="bg-blue-600 text-white px-5 py-3">
+                + Nouveau genre
+            </button>
 
         </div>
 
 
-        <div class="bg-white rounded-lg shadow overflow-hidden">
+        <div id="section_form" class="p-6 bg-white mb-4 hidden">
+
+            <h3 class="text-xl font-bold mb-6">
+                Ajouter un genre
+            </h3>
+
+            <form id="form-genre">
+
+                <label class="block mb-2">
+                    Nom du genre
+                </label>
+
+                <input
+                    type="text"
+                    id="nom"
+                    placeholder="Nom du genre"
+                    class="w-full border p-3 mb-4"
+                    required>
+
+                <label class="block mb-2">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    placeholder="Description du genre"
+                    class="w-full border p-3 mb-4"
+                    required></textarea>
+
+                <button
+                    type="submit"
+                    class="bg-blue-600 text-white px-5 py-2">
+                    Enregistrer
+                </button>
+
+                <button
+                    type="button"
+                    id="btn-annuler"
+                    class="bg-gray-400 text-white px-5 py-2">
+                    Annuler
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="bg-white">
 
             <table class="w-full">
 
                 <thead class="bg-gray-800 text-white">
 
                     <tr>
-
-                        <th class="p-4 text-left">
-                            ID
-                        </th>
-
-                        <th class="p-4 text-left">
-                            Nom de genre
-                        </th>
-
-                        <th class="p-4 text-left">
-                            description de genre
-                        </th>
-
+                        <th class="p-4 text-left">ID</th>
+                        <th class="p-4 text-left">Nom</th>
+                        <th class="p-4 text-left">Description</th>
                     </tr>
 
                 </thead>
 
-                <tbody
-                    id="table-genre"
-                    class="divide-y">
+                <tbody id="table-genre">
                 </tbody>
 
             </table>
@@ -105,5 +124,6 @@
 </div>
 
 <script src="../js/genres.js"></script>
+
 </body>
 </html>

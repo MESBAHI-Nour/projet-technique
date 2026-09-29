@@ -1,0 +1,17 @@
+[
+    {
+        "id_genre": 1,
+        "nom_genre": "Action",
+        "description_genre": "Films d'action"
+    },
+    {
+        "id_genre": 2,
+        "nom_genre": "genreTest",
+        "description_genre": "test description"
+    },
+    {
+        "id_genre": 3,
+        "nom_genre": "genreTest",
+        "description_genre": "ddddddddddddddddddd"
+    }
+]

@@ -1,6 +1,9 @@
-const API = "../../backend/admin/api/genres.php";
+const API = "../../backend/admin/api/GestionGenre.php";
 const table = document.getElementById("table-genre");
 const form = document.getElementById("form-genre");
+const btnAjoute = document.getElementById("btn-nouvelle");
+const btnAnnuler = document.getElementById("btn-annuler");
+const sectionForm=document.getElementById("section_form");
 const nom =document.getElementById("nom");
 const description =document.getElementById("description");
 
@@ -33,44 +36,21 @@ function afficherGenres() {
                     );
 
                 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
 
         })
-
         .catch(error => {
             console.error(error);
         });
 }
+
+btnAjoute.addEventListener("click",()=>{
+    sectionForm.classList.remove("hidden")
+})
+
+btnAnnuler.addEventListener("click",()=>{
+    sectionForm.classList.add("hidden")
+})
 
 document.addEventListener("DOMContentLoaded",()=>afficherGenres())
 
@@ -90,7 +70,8 @@ if (form){
             .then(data =>{
                 console.log(data)
                 form.reset()
-                window.location.href = "../pages/admin-genres.html"
+                sectionForm.classList.add("hidden")
+                afficherGenres();
         }).catch(error => console.error(error))
     })
 }
