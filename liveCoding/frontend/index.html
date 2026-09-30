@@ -19,14 +19,14 @@
                 <h2 class="text-2x1 font-bold mb-8">Gestion Des Genres</h2>
                 <button id="btnAjouter" class="bg-blue-600 text-white px-5 py-3">+ Ajouter Genre</button>
             </div>
-            <div class="p-6 bg-white mb-4 " id="sectionForm">
-                <form>
+            <div class="p-6 bg-white mb-4 hidden" id="sectionForm">
+                <form id="form">
                     <label class="block mb-2">Nom de Genre</label>
-                    <input type="text" class="w-full border p-3 mb-4" id="nom_genre" name="id_genre">
+                    <input type="text" class="w-full border p-3 mb-4" id="nom_genre"  name="nom_genre">
                     <label class="block mb-2">Description de Genre</label>
-                    <input type="text" class="w-full border p-3 mb-4" id="description_genre" name="description_genre">
+                    <input type="text" class="w-full border p-3 mb-4" id="description_genre"  name="description_genre">
                     <button class="bg-blue-600 text-white px-5 py-3">Ajouter</button>
-                    <button class="bg-gray-500 text-white px-5 py-3" id="annulerBtn">Annuler</button>
+                    <button class="bg-gray-500 text-white px-5 py-3" id="annulerBtn" type="button">Annuler</button>
                 </form>
             </div>
             <div>

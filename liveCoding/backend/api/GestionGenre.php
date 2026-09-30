@@ -16,9 +16,15 @@ header('Content-Type: application/json');
 
     public function addGenre(){
         $content=file_get_contents($this->path_file);
-        $genres=file_get_contents("https://input");
-        
-
+        $genres=json_decode($content,true);
+        $data=json_decode(file_get_contents("php://input"),true);
+        $genres[]=[
+            "id_genre"=>count($genres)+1,
+            "nom_genre"=>$data["nom_genre"],
+            "description_genre"=>$data["description_genre"]
+        ];
+        file_put_contents($this->path_file,json_encode($genres,JSON_PRETTY_PRINT));
+        echo json_encode($genres);
     }
 
     public function requestTraitement(){
