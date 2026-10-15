@@ -4,7 +4,7 @@
         private $description;
         private $nom;
 
-        public function __construct(int $id=null,string $description="",string $nom=""){
+        public function __construct(int $id,string $description,string $nom){
             $this->id=$id;
             $this->description=$description;
             $this->nom=$nom;

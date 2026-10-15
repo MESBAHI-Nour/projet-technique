@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nom": "Action",
+        "description": "Films avec des scènes d'action et de combat"
+    },
+    {
+        "id": 2,
+        "nom": "Comédie",
+        "description": "Films humoristiques"
+    },
+    {
+        "id": 3,
+        "nom": "Horreur",
+        "description": "Films destinés à provoquer la peur"
+    },
+    {
+        "id": 4,
+        "nom": "Science-fiction",
+        "description": "Films basés sur des technologies ou des mondes imaginaires"
+    },
+    {
+        "id": 5,
+        "nom": "Romance",
+        "description": "Films centrés sur les relations amoureuses"
+    }
+]
