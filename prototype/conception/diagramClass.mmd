@@ -2,75 +2,72 @@ classDiagram
     direction TB
 
     class REALISATEUR {
-        -int id_realisateur
-        -string nom_realisateur
-        -string prenom_realisateur
+        -int id
+        -string nom
+        -string prenom
         -date date_naissance
         -string nationalite
         -text biographie
-        -string photo_realisateur_url
+        -string photo_url
 
-        +getIdRealisateur() int
-        +setIdRealisateur(int id) void
-        +getNomRealisateur() string
-        +setNomRealisateur(string nom) void
-        +getPrenomRealisateur() string
-        +setPrenomRealisateur(string prenom) void
+        +getId() int
+        +setId(int id) void
+        +getNom() string
+        +setNom(string nom) void
+        +getPrenom() string
+        +setPrenom(string prenom) void
         +getDateNaissance() date
         +setDateNaissance(date date) void
         +getNationalite() string
         +setNationalite(string nationalite) void
         +getBiographie() string
         +setBiographie(string biographie) void
-        +getPhotoRealisateurUrl() string
-        +setPhotoRealisateurUrl(string url) void
+        +getPhotoUrl() string
+        +setPhotoUrl(string url) void
     }
 
     class FILM {
-        -int id_film
-        -string titre_film
-        -string description_film
+        -int id
+        -string titre
+        -string description
         -datetime date_sortie
         -int duree
         -int classification_age
-        -string poster_film_url
+        -string poster_url
         -string video_stream_url
-        -int status_film
+        -int status
 
-        +getIdFilm() int
-        +setIdFilm(int id) void
-        +getTitreFilm() string
-        +setTitreFilm(string titre) void
-        +getDescriptionFilm() string
-        +setDescriptionFilm(string description) void
+        +getId() int
+        +setId(int id) void
+        +getTitre() string
+        +setTitre(string titre) void
+        +getDescription() string
+        +setDescription(string description) void
         +getDateSortie() datetime
         +setDateSortie(datetime date) void
         +getDuree() int
         +setDuree(int duree) void
         +getClassificationAge() int
         +setClassificationAge(int age) void
-        +getPosterFilmUrl() string
-        +setPosterFilmUrl(string url) void
+        +getPosterUrl() string
+        +setPosterUrl(string url) void
         +getVideoStreamUrl() string
         +setVideoStreamUrl(string url) void
-        +getStatusFilm() int
-        +setStatusFilm(int status) void
-
-        +publier() void
-        +modifierStatut(int status) void
+        +getStatus() int
+        +setStatus(int status) void
     }
 
     class GENRE {
-        -int id_genre
-        -string description_genre
-        -string nom_genre
+        -int id
+        -string description
+        -string nom
 
-        +getIdGenre() int
-        +setIdGenre(int id) void
-        +getDescriptionGenre() string
-        +setDescriptionGenre(string description) void
-        +getNomGenre() string
-        +setNomGenre(string nom) void
+        +getId() int
+        +setId(int id) void
+        +getDescription() string
+        +setDescription(string description) void
+        +getNom() string
+        +setNom(string nom) void
 
     }
 
