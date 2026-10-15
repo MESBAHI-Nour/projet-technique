@@ -6,4 +6,8 @@
     if($methode=="GET"){
         echo json_encode($controllerGenre->listerGenres());
     }
+
+    else if($methode=="POST"){
+        echo json_encode($controllerGenre->ajouterGenre());
+    }
 ?>
