@@ -1,0 +1,78 @@
+classDiagram
+    direction TB
+
+    class REALISATEUR {
+        -int id_realisateur
+        -string nom_realisateur
+        -string prenom_realisateur
+        -date date_naissance
+        -string nationalite
+        -text biographie
+        -string photo_realisateur_url
+
+        +getIdRealisateur() int
+        +setIdRealisateur(int id) void
+        +getNomRealisateur() string
+        +setNomRealisateur(string nom) void
+        +getPrenomRealisateur() string
+        +setPrenomRealisateur(string prenom) void
+        +getDateNaissance() date
+        +setDateNaissance(date date) void
+        +getNationalite() string
+        +setNationalite(string nationalite) void
+        +getBiographie() string
+        +setBiographie(string biographie) void
+        +getPhotoRealisateurUrl() string
+        +setPhotoRealisateurUrl(string url) void
+    }
+
+    class FILM {
+        -int id_film
+        -string titre_film
+        -string description_film
+        -datetime date_sortie
+        -int duree
+        -int classification_age
+        -string poster_film_url
+        -string video_stream_url
+        -int status_film
+
+        +getIdFilm() int
+        +setIdFilm(int id) void
+        +getTitreFilm() string
+        +setTitreFilm(string titre) void
+        +getDescriptionFilm() string
+        +setDescriptionFilm(string description) void
+        +getDateSortie() datetime
+        +setDateSortie(datetime date) void
+        +getDuree() int
+        +setDuree(int duree) void
+        +getClassificationAge() int
+        +setClassificationAge(int age) void
+        +getPosterFilmUrl() string
+        +setPosterFilmUrl(string url) void
+        +getVideoStreamUrl() string
+        +setVideoStreamUrl(string url) void
+        +getStatusFilm() int
+        +setStatusFilm(int status) void
+
+        +publier() void
+        +modifierStatut(int status) void
+    }
+
+    class GENRE {
+        -int id_genre
+        -string description_genre
+        -string nom_genre
+
+        +getIdGenre() int
+        +setIdGenre(int id) void
+        +getDescriptionGenre() string
+        +setDescriptionGenre(string description) void
+        +getNomGenre() string
+        +setNomGenre(string nom) void
+
+    }
+
+    REALISATEUR "1" --> "0..*" FILM : réalise
+    GENRE "1" --> "1..*" FILM : associe
