@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nom": "Action",
+        "description": "description A"
+    },
+    {
+        "id": 2,
+        "nom": "Comedie",
+        "description": "description B"
+    },
+    {
+        "id": 3,
+        "nom": "Drama",
+        "description": "description C"
+    },
+    {
+        "id": 4,
+        "nom": "genreTest",
+        "description": "genre Test"
+    }
+]
