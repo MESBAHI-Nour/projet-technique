@@ -18,5 +18,10 @@
         "id": 4,
         "nom": "genreTest",
         "description": "test"
+    },
+    {
+        "id": 5,
+        "nom": "tese",
+        "description": "tygd"
     }
 ]

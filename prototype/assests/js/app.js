@@ -47,9 +47,9 @@ function afficherGenre(){
         data.forEach(genre=>{
         const tr=document.createElement("tr")
         tr.innerHTML=`
-            <td>${genre['id']}</td>
-            <td>${genre['nom']}</td>
-            <td>${genre['description']}</td>
+            <td class="px-4 py-2">${genre['id']}</td>
+            <td class="px-4 py-2">${genre['nom']}</td>
+            <td class="px-4 py-2">${genre['description']}</td>
         `
         tbody.appendChild(tr);
         })
