@@ -1,8 +1,9 @@
-const btnAjouter = document.getElementById("btnAjouter");
-const btnAnnuler = document.getElementById("btnAnnuler");
-const Form=document.getElementById("Form");
-const tbody=document.getElementById("tbody");
-const api="http://localhost:8000/prototype/backend/api/api.php"
+const btnAjouter = document.getElementById("btn-show-form");
+const btnAnnuler = document.getElementById("btn-cancel-form");
+const Form=document.getElementById("form-genre");
+const tbody=document.getElementById("table-categories-body");
+const api="http://localhost:8000/backend/api/api.php";
+const sectionForm=document.getElementById("section-form");
 
 
 function setLoadingState(isLoading) {
@@ -16,27 +17,42 @@ function setLoadingState(isLoading) {
     }
 }
 
-function showToast(message, type) {
-    const toastContainer = document.getElementById('toast-container');
+function showToast(message, type = 'success') {
+    const container = document.getElementById('toast-container');
     const toast = document.createElement('div');
-    toast.className = `toast ${type}`;
+
+    const color = type === 'success'
+        ? 'bg-green-500'
+        : 'bg-red-500';
+
+    toast.className = `
+        ${color} text-white px-5 py-3 rounded-lg shadow-lg
+        transition-opacity duration-500
+    `;
+
     toast.textContent = message;
-    toastContainer.appendChild(toast);
+    container.appendChild(toast);
+
     setTimeout(() => {
-        toast.remove();
+        toast.style.opacity = '0';
+
+        setTimeout(() => toast.remove(), 500);
     }, 3000);
 }
+
 
 function afficherGenre(){
     fetch(api).then(response=>response.json())
     .then(data=>{ 
+        data.forEach(genre=>{
         const tr=document.createElement("tr")
         tr.innerHTML=`
-            <td>${data['id']}</td>
-            <td>${data['nom']}</td>
-            <td>${data['description']}</td>
+            <td>${genre['id']}</td>
+            <td>${genre['nom']}</td>
+            <td>${genre['description']}</td>
         `
         tbody.appendChild(tr);
+        })
     })
 }
 
@@ -58,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.json())
         .then(data => {
             setLoadingState(false);
+            tbody.innerHTML = ""
             afficherGenre();
             showToast("Genre ajouté avec succès !", "success");
             Form.reset();
@@ -66,4 +83,11 @@ document.addEventListener("DOMContentLoaded", function() {
             showToast("Erreur lors de l'ajout du genre.", "error");
             console.error("Erreur:", error);
         })})
+
+    btnAnnuler.addEventListener("click", function() {
+        sectionForm.classList.add("hidden");
+    })
+    btnAjouter.addEventListener("click", function() {
+        sectionForm.classList.remove("hidden");
+    })
 })
