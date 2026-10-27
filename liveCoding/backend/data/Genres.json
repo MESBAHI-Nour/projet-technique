@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nom": "Action",
+        "description": "description Action"
+    },
+    {
+        "id": 2,
+        "nom": "genreTest",
+        "description": "TESST"
+    }
+]

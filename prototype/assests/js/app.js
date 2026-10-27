@@ -35,7 +35,6 @@ function showToast(message, type = 'success') {
 
     setTimeout(() => {
         toast.style.opacity = '0';
-
         setTimeout(() => toast.remove(), 500);
     }, 3000);
 }
