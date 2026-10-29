@@ -1,6 +1,6 @@
 <?php
     require_once "genre.php";
-    class GestionGenre{
+    class GestionGenre extends BaseService{
         private static $dataFile ="../data/genres.json";
         public function getAll(){
             $genres=[];
