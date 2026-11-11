@@ -4,10 +4,22 @@
     $controllerGenre=new GenreController();
     $methode=$_SERVER["REQUEST_METHOD"];
     if($methode=="GET"){
-        echo json_encode($controllerGenre->listerGenres());
+        try{
+            echo json_encode($controllerGenre->listerGenres());
+        }
+        catch(Exception $e){
+            http_response_code(500);
+            echo json_encode(["error" => "Erreur lors de la récupération des thématiques"]);
+        }
     }
 
     else if($methode=="POST"){
-        echo json_encode($controllerGenre->ajouterGenre());
+        try{
+            echo json_encode($controllerGenre->ajouterGenre());
+        }
+        catch(Exception $e){
+            http_response_code(500);
+            echo json_encode(["error" => "Erreur lors de la joute des thématiques"]);
+        }
     }
 ?>
