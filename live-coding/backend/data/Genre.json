@@ -13,10 +13,5 @@
         "id": 3,
         "nom": "Drama",
         "description": "description C"
-    },
-    {
-        "id": 4,
-        "nom": "genreTest",
-        "description": "genre Test"
     }
 ]

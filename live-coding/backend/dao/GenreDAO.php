@@ -1,6 +1,6 @@
 <?php
-    require_once "Genre.php";
-    class GestionGenre{
+    require_once "../classes/Genre.php";
+    class GenreDAO{
         private  $datafile;
         public function __construct(){
             $this->datafile="../data/Genre.json";

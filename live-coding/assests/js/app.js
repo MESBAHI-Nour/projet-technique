@@ -6,8 +6,20 @@ const description=document.getElementById("description")
 const BtnAjouter=document.getElementById("btn-show-form")
 const sectionForm=document.getElementById("section-form")
 const btnAnnuler=document.getElementById("btn-cancel-form")
+const toastContainer=document.getElementById("toast-container")
 
 
+function toast(message,type=true){
+    let color=type?"bg-green-500":"bg-red-500"
+    const toast = document.createElement('div')
+    toast.classList.add(color,"text-white","m-3")
+    toast.textContent=message
+    toastContainer.appendChild(toast)
+    setTimeout(()=>{
+        toast.style.opacity=0
+        toast.remove()
+    },2000)
+}
 
 function afficher(){
     fetch(api)
@@ -42,11 +54,15 @@ document.addEventListener("DOMContentLoaded",()=>{
             }).then(response=>response.json())
             .then(data=>{
                 form.reset()
+                if(!data.success){
+                    throw Error(data.message)
+                }
+                toast("genre bien ajoute!")
                 sectionForm.classList.add("hidden")
                 tbody.innerHTML=""
                 afficher()
             }
-            )
+            ).catch(error=>toast(error,false))
         })
     }
     BtnAjouter.addEventListener("click",()=>sectionForm.classList.remove("hidden"))

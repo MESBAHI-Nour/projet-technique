@@ -1,14 +1,14 @@
 <?php
-    require_once "../controllers/GenreController.php";
+    require_once "../services/GenreService.php";
     header("Content-Type:application/json");
-    $controller=new GenreController();
+    $service=new GenreService();
     $method=$_SERVER["REQUEST_METHOD"];
     if($method=="GET"){
-        echo json_encode($controller->Afficher());
+        echo json_encode($service->Afficher());
     }
 
     if($method=="POST"){
-        echo json_encode($controller->Ajouter());
+        echo json_encode($service->Ajouter());
     }
 
 ?>
